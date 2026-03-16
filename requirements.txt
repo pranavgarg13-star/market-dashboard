@@ -1,0 +1,9 @@
+flask
+pandas
+requests
+plotly
+schedule
+scikit-learn
+yfinance
+
+pip install -r requirements.txt

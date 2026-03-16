@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Market Dashboard</title>
+    <meta http-equiv="refresh" content="30">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <style>
+
+body{
+background:#0f172a;
+color:white;
+font-family:Arial;
+}
+
+.card{
+background:#1e293b;
+border:none;
+border-radius:10px;
+text-align:center;
+padding:20px;
+color: #d8e0e7
+}
+
+.price{
+font-size:22px;
+font-weight:bold;
+}
+
+.positive{
+color:#22c55e;
+}
+
+.negative{
+color:#ef4444;
+}
+
+</style>
+    
+</head>
+
+<body class="container mt-4">
+
+<h1 class="text-center mb-4">
+Global Market Dashboard
+</h1>
+
+<div class="row g-3">
+
+<div class="col-md-2">
+<div class="card">
+<h5>BTC</h5>
+<div class="price">${{ btc }}</div>
+<div class="{% if btc_change > 0 %}positive{% else %}negative{% endif %}">
+{{ btc_change }} %
+</div>
+</div>
+</div>
+
+<div class="col-md-2">
+<div class="card">
+<h5>ETH</h5>
+<div class="price">${{ eth }}</div>
+<div class="{% if eth_change > 0 %}positive{% else %}negative{% endif %}">
+{{ eth_change }} %
+</div>
+</div>
+</div>
+
+<div class="col-md-2">
+<div class="card">
+<h5>SOL</h5>
+<div class="price">${{ sol }}</div>
+<div class="{% if sol_change > 0 %}positive{% else %}negative{% endif %}">
+{{ sol_change }} %
+</div>
+</div>
+</div>
+
+<div class="col-md-2">
+<div class="card">
+<h5>DOGE</h5>
+<div class="price">${{ doge }}</div>
+<div class="{% if doge_change > 0 %}positive{% else %}negative{% endif %}">
+{{ doge_change }} %
+</div>
+</div>
+</div>
+
+<div class="col-md-2">
+<div class="card">
+<h5>APPLE</h5>
+<div class="price">${{ aapl }}</div>
+</div>
+</div>
+
+<div class="col-md-2">
+<div class="card">
+<h5>TESLA</h5>
+<div class="price">${{ tsla }}</div>
+</div>
+</div>
+
+</div>
+
+<hr class="mt-5">
+
+<h3>AI Market Prediction</h3>
+
+<div class="card mt-3">
+
+<p>Current Bitcoin: ${{ btc }}</p>
+
+<p>Predicted Bitcoin: ${{ predicted }}</p>
+
+<p>
+Trend:
+
+{% if trend == "UP" %}
+<span class="positive">▲ Bullish</span>
+{% else %}
+<span class="negative">▼ Bearish</span>
+{% endif %}
+
+</p>
+
+</div>
+
+<hr class="mt-5">
+
+<h3>Market Trend Charts</h3>
+
+<div class="row">
+
+<div class="col-md-6">
+<h5>Crypto Market</h5>
+ <iframe src="/crypto_chart.html?{{ range(1,100000)|random }}" width="100%" height="500"></iframe>
+
+</div>
+
+<div class="col-md-6">
+<h5>Stock Market</h5>
+<iframe src="/stock_chart.html?{{ range(1,100000)|random }}" width="100%" height="500"></iframe>
+</div>
+
+</div>
+
+</body>
+
+</html>
+
+
