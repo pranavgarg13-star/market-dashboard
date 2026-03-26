@@ -1,6 +1,7 @@
 from flask import Flask, render_template, send_file
 from modules.prediction import predict_bitcoin_trend
 import pandas as pd
+import os 
 
 app = Flask(__name__)
 
