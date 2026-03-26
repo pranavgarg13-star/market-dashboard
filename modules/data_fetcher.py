@@ -4,9 +4,9 @@ def get_crypto_prices() :
     
     url = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana,dogecoin&vs_currencies=usd"
 
-    response =  requests.get(url)
-
-    data = response.json() 
+    response = requests.get(url, timeout=10)
+    response.raise_for_status()
+    data = response.json()
 
     bitcoin_price = data["bitcoin"]["usd"]
     ethereum_price = data["ethereum"]["usd"]

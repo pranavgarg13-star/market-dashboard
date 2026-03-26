@@ -25,7 +25,7 @@ def update_market_data():
 
     df = pd.DataFrame(data)
 
-    file_exists = os.path.isfile("data/market_data.csv")
+    
 
     # Save data to CSV
     df.to_csv(

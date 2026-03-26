@@ -11,6 +11,9 @@ def dashboard():
 
     df.columns = ["time","bitcoin","ethereum","solana","dogecoin","apple","tesla"]
 
+    if len(df) < 2:
+      return "Not enough data yet, wait 2 minutes and refresh.", 503
+
     latest = df.iloc[-1]
     previous = df.iloc[-2]
 
