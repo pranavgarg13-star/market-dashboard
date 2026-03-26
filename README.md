@@ -8,7 +8,7 @@ A real-time financial analytics dashboard that tracks live cryptocurrency and st
 
 ## 📸 Preview
 
-![alt text](image-2.png)
+![Live Market Dashboard](image-2.png)
 
 ---
 
