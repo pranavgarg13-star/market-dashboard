@@ -32,8 +32,8 @@ def dashboard():
         eth=latest["ethereum"],
         sol=latest["solana"],
         doge=latest["dogecoin"],
-        aapl=latest["apple"],
-        tsla=latest["tesla"],
+        aapl=round(float(latest["apple"]), 2),
+        tsla=round(float(latest["tesla"]), 2),
 
         btc_change=round(btc_change,2),
         eth_change=round(eth_change,2),
